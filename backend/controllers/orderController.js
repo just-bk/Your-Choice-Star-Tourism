@@ -47,6 +47,7 @@ const placeOrderStripe = async (req, res) => {
             success_url: `${origin}/verify?success=true&orderId=${newOrder._id}`,
             cancel_url: `${origin}/verify?success=false&orderId=${newOrder._id}`,
             mode: 'payment',
+            payment_method_types: ['card'],
         })
 
         if (session) {
